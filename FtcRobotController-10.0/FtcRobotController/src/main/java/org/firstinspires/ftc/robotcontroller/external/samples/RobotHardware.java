@@ -64,7 +64,7 @@ public class RobotHardware {
     private DcMotor armMotor = null;
     private Servo   leftHand = null;
     private Servo   rightHand = null;
-
+    //hello
     // Define Drive constants.  Make them public so they CAN be used by the calling OpMode
     public static final double MID_SERVO       =  0.5 ;
     public static final double HAND_SPEED      =  0.02 ;  // sets rate to move servo
