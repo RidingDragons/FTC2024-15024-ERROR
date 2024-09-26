@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 //Imports
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 
@@ -28,19 +29,19 @@ public class Clark15024HWMap {
 
         //Using functions from the DcMotor class, this changes the direction of the motor, sets the power to 0, and makes the runmode to run without encoder as the robot is not moving
         //The direction of the some variables are different because they are needed to offset each other to move
-        driveLeftBack.setDirection(DcMotor.Direction.FORWARD);
+        driveLeftBack.setDirection(DcMotorSimple.Direction.FORWARD);
         driveLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         driveLeftBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        driveLeftFront.setDirection(DcMotor.Direction.FORWARD);
+        driveLeftFront.setDirection(DcMotorSimple.Direction.FORWARD);
         driveLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         driveLeftFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        driveRightBack.setDirection(DcMotor.Direction.REVERSE);
+        driveRightBack.setDirection(DcMotorSimple.Direction.REVERSE);
         driveRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         driveRightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        driveRightFront.setDirection(DcMotor.Direction.REVERSE);
+        driveRightFront.setDirection(DcMotorSimple.Direction.REVERSE);
         driveRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         driveRightFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
