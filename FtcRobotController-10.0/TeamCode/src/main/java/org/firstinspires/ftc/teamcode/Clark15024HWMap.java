@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 //driveRightFront, driveRightBack, driveLeftFront, driveRightBack
 public class Clark15024HWMap {
     //Instances variables which makes the variables we can use or assign later
-    // null - placeholder of a variable and basically have nothing in the variable currently
+    // null - placeholder of a variable and basically has nothing in the variable currently
     public DcMotor driveRightFront = null;
     public DcMotor driveLeftFront = null;
     public DcMotor driveRightBack = null;
