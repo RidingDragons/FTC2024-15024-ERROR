@@ -22,17 +22,20 @@ public class Clark15024HWMap {
     public void Map(HardwareMap HWM){
         //Assigns values to instance variables using the parameter which the .get functions to pull the information from the control hub
         hM = HWM;
-        driveLeftBack = HWM.get(DcMotor.class, "driveLeftBack"); //TODO why is there a string with the "device name"? (add a comment so people know that it is linked to whatever is set in the config file on the robot)
+        //The second parameter of the get function is used to obtain the specific motor from the config file in the robot
+        driveLeftBack = HWM.get(DcMotor.class, "driveLeftBack");
         driveLeftFront = HWM.get(DcMotor.class, "driveLeftFront");
         driveRightFront = HWM.get(DcMotor.class, "driveRightFront");
         driveRightBack = HWM.get(DcMotor.class, "driveRightBack");
 
         //Using functions from the DcMotor class, this changes the direction of the motor, sets the power to 0, and makes the runmode to run without encoder as the robot is not moving
         //The direction of the some variables are different because they are needed to offset each other to move
-        //TODO What I usually do to be more specific I will comment the first section of repeated code with what each line does so that they rest are self explanatory.
-        //TODO For the example below, the first 3 lines what have comments next to them explaining the specific line and then the 3 other blocks don't need anything next to them as you can just look up to the first block of three lines to figure out what is going on.
+       
+        //setDirection function sets the direction of the wheels which it has to go. Some say forward and some say reverse because that is how you are also to move the robot back and forth
         driveLeftBack.setDirection(DcMotorSimple.Direction.FORWARD);
+        //setZeroPowerBehavior function indicates to us that the power of the motor is at zero or not changing
         driveLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        //setMode with Running without encoder means that the motor is on by the encoders on the motors are not activated yet
         driveLeftBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         driveLeftFront.setDirection(DcMotorSimple.Direction.FORWARD);
