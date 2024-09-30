@@ -15,6 +15,10 @@ public class Clark15024HWMap {
     public DcMotor driveLeftFront = null;
     public DcMotor driveRightBack = null;
     public DcMotor driveLeftBack = null;
+    public DcMotor linearMotionUp1 = null;
+    public DcMotor linearMotionUp2 = null;
+    public DcMotor linearMotionRight1 = null;
+    public DcMotor intakeHD = null;
 
     HardwareMap hM = null;
     //Map fucntion which we can use to assign values to the instance variables
@@ -26,6 +30,11 @@ public class Clark15024HWMap {
         driveLeftFront = HWM.get(DcMotor.class, "driveLeftFront");
         driveRightFront = HWM.get(DcMotor.class, "driveRightFront");
         driveRightBack = HWM.get(DcMotor.class, "driveRightBack");
+
+        linearMotionUp1 = HWM.get(DcMotor.class, "linearMotionUp1");
+        linearMotionUp2 = HWM.get(DcMotor.class, "linearMotionUp2");
+        linearMotionRight1 = HWM.get(DcMotor.class, "linearMotionRight1");
+
 
         //Using functions from the DcMotor class, this changes the direction of the motor, sets the power to 0, and makes the runmode to run without encoder as the robot is not moving
         //The direction of the some variables are different because they are needed to offset each other to move
