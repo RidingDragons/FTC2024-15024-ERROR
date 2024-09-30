@@ -27,6 +27,7 @@ public class MecanumDriveTrain extends OpMode {
 
         //Instances variables assigned to double or decimal values to the different gamepad
         //Set the vertical as a negative because of the different values needed for the right side as they are in reverse
+        //TODO change negative signs of all variables if robot not moving or working as the values for the robot could need to be switched
         vertical = -gamepad1.left_stick_y;
         horizontal = gamepad1.left_stick_x;
         pivot = gamepad1.right_stick_x;

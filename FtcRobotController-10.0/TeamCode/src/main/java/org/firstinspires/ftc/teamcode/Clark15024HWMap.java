@@ -26,6 +26,7 @@ public class Clark15024HWMap {
     public void Map(HardwareMap HWM){
         //Assigns values to instance variables using the parameter which the .get functions to pull the information from the control hub
         hM = HWM;
+        //The second parameter of the get function is used to obtain the specific motor from the config file in the robot
         driveLeftBack = HWM.get(DcMotor.class, "driveLeftBack");
         driveLeftFront = HWM.get(DcMotor.class, "driveLeftFront");
         driveRightFront = HWM.get(DcMotor.class, "driveRightFront");
@@ -38,8 +39,12 @@ public class Clark15024HWMap {
 
         //Using functions from the DcMotor class, this changes the direction of the motor, sets the power to 0, and makes the runmode to run without encoder as the robot is not moving
         //The direction of the some variables are different because they are needed to offset each other to move
+       
+        //setDirection function sets the direction of the wheels which it has to go. Some say forward and some say reverse because that is how you are also to move the robot back and forth
         driveLeftBack.setDirection(DcMotorSimple.Direction.FORWARD);
+        //setZeroPowerBehavior function indicates to us that the power of the motor is at zero or not changing
         driveLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        //setMode with Running without encoder means that the motor is on by the encoders on the motors are not activated yet
         driveLeftBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         driveLeftFront.setDirection(DcMotorSimple.Direction.FORWARD);
