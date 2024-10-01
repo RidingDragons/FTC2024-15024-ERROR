@@ -29,14 +29,22 @@ public class MecanumDriveTrain extends OpMode {
         //Set the vertical as a negative because of the different values needed for the right side as they are in reverse
         //TODO change negative signs of all variables if robot not moving or working as the values for the robot could need to be switched
         vertical = -gamepad1.left_stick_y;
-        horizontal = gamepad1.left_stick_x;
+        horizontal = gamepad1.left_stick_x * 1.1; //  Multiply by 1.1 to negate imperfect strafing
         pivot = gamepad1.right_stick_x;
 
+        //Obtains values for each motor through the positions through values
+        //from  left joystick which has up/down(vertical) and left/right values(horizontal), and right joystick which has left/right values(pivot)
+        double demominator = Math.max(Math.abs(vertical) + Math.abs(horizontal) + Math.abs(pivot), 1);
+        double rightFrontPower = (vertical - horizontal - pivot) / demominator;
+        double rightBackPower = (vertical + horizontal - pivot) / demominator;
+        double LeftFrontPower = (pivot + vertical + horizontal) / demominator;
+        double LeftBackPower = (vertical - horizontal + pivot) / demominator;
+
         //Sets Power to the motors and changed the signed of the math in order to proportion the wheels right to move
-        rightFront.setPower(pivot + (-vertical + horizontal));
-        rightBack.setPower(pivot + (-vertical - horizontal));
-        leftBack.setPower(pivot + (-vertical - horizontal));
-        leftFront.setPower(pivot + (-vertical + horizontal));
+        rightFront.setPower(rightFrontPower);
+        rightBack.setPower(rightBackPower);
+        leftBack.setPower(LeftBackPower);
+        leftFront.setPower(LeftFrontPower);
 
 
     }
