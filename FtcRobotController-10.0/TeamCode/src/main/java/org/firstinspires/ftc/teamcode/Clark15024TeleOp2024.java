@@ -39,7 +39,9 @@ public class Clark15024TeleOp2024 extends LinearOpMode {
         waitForStart();
 
         //while loop starts once the start button is pressed
-        while(opModeIsActive()){}
+        while(opModeIsActive()){
+
+        }
 
     }
 
