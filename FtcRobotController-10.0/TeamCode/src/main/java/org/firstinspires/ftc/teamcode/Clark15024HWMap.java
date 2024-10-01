@@ -21,7 +21,7 @@ public class Clark15024HWMap {
     public DcMotor intakeHD = null;
 
     HardwareMap hM = null;
-    //Map fucntion which we can use to assign values to the instance variables
+    //Map function which we can use to assign values to the instance variables
     //HWM - HardwareMap parameter which we can use to pull values from which are mostly used to assign to values
     public void Map(HardwareMap HWM){
         //Assigns values to instance variables using the parameter which the .get functions to pull the information from the control hub
@@ -58,6 +58,20 @@ public class Clark15024HWMap {
         driveRightFront.setDirection(DcMotorSimple.Direction.REVERSE);
         driveRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         driveRightFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        linearMotionUp1.setDirection(DcMotorSimple.Direction.FORWARD);
+        linearMotionUp1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        linearMotionUp1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        linearMotionUp2.setDirection(DcMotorSimple.Direction.REVERSE);
+        linearMotionUp2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        linearMotionUp2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        //TODO Change direction of motor according to the plans of hardware team
+        linearMotionRight1.setDirection(DcMotorSimple.Direction.FORWARD);
+        linearMotionRight1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        linearMotionRight1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
 
     }
 
