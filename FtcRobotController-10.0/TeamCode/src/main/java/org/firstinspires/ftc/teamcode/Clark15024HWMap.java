@@ -35,6 +35,7 @@ public class Clark15024HWMap {
         linearMotionUp1 = HWM.get(DcMotor.class, "linearMotionUp1");
         linearMotionUp2 = HWM.get(DcMotor.class, "linearMotionUp2");
         linearMotionRight1 = HWM.get(DcMotor.class, "linearMotionRight1");
+        intakeHD = HWM.get(DcMotor.class, "Intake");
 
 
         //Using functions from the DcMotor class, this changes the direction of the motor, sets the power to 0, and makes the runmode to run without encoder as the robot is not moving
@@ -71,6 +72,10 @@ public class Clark15024HWMap {
         linearMotionRight1.setDirection(DcMotorSimple.Direction.FORWARD);
         linearMotionRight1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         linearMotionRight1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        intakeHD.setDirection(DcMotorSimple.Direction.FORWARD);
+        intakeHD.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        intakeHD.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
 
     }
