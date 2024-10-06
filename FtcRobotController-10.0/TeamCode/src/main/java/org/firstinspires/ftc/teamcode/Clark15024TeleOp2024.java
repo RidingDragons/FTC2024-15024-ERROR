@@ -28,13 +28,13 @@ public class Clark15024TeleOp2024 extends LinearOpMode {
         robot.driveRightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.driveRightFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.linearMotionUp1.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        robot.linearMotionUp1.setMode(DcMotor.RunMode.RunMode.RUN_WITHOUT_ENCODER);
+        robot.linearMotionUp1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.linearMotionUp2.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        robot.linearMotionUp2.setMode(DcMotor.RunMode.RunMode.RUN_WITHOUT_ENCODER);
+        robot.linearMotionUp2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.linearMotionRight1.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.linearMotionRight1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        robot.intake.setMode(DcMotor.RunMode.RunMode.RUN_WITHOUT_ENCODER);
-        robot.intake.setMode(DcMotor);
+        robot.intakeHD.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        robot.intakeHD.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         //Waits for the button to start on the driver hub to be pressed
         waitForStart();
 
