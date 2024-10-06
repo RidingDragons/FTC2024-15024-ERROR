@@ -35,6 +35,7 @@ public class Clark15024TeleOp2024 extends LinearOpMode {
         robot.linearMotionRight1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.intakeHD.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.intakeHD.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        //TODO Add SparkFun Sensor and additional ability
         //Waits for the button to start on the driver hub to be pressed
         waitForStart();
 

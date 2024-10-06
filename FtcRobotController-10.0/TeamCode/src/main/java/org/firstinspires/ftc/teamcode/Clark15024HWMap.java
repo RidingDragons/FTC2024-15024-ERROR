@@ -4,6 +4,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+import org.firstinspires.ftc.robotcontroller.external.samples.SensorSparkFunOTOS;
+
 
 //Clark Robotics 15024 Hardware Map
 //Currently only have the motors from the robot powering the wheels
@@ -19,6 +21,7 @@ public class Clark15024HWMap {
     public DcMotor linearMotionUp2 = null;
     public DcMotor linearMotionRight1 = null;
     public DcMotor intakeHD = null;
+    public SensorSparkFunOTOS odom = null;
 
     HardwareMap hM = null;
     //Map function which we can use to assign values to the instance variables
@@ -36,6 +39,8 @@ public class Clark15024HWMap {
         linearMotionUp2 = HWM.get(DcMotor.class, "linearMotionUp2");
         linearMotionRight1 = HWM.get(DcMotor.class, "linearMotionRight1");
         intakeHD = HWM.get(DcMotor.class, "Intake");
+
+        odom = HWM.get(SensorSparkFunOTOS.class, "SparkFun");
 
 
         //Using functions from the DcMotor class, this changes the direction of the motor, sets the power to 0, and makes the runmode to run without encoder as the robot is not moving
