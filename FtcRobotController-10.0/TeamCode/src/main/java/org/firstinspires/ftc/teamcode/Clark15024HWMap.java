@@ -39,7 +39,6 @@ public class Clark15024HWMap {
         linearMotionUp2 = HWM.get(DcMotor.class, "linearMotionUp2");
         linearMotionRight1 = HWM.get(DcMotor.class, "linearMotionRight1");
         intakeHD = HWM.get(DcMotor.class, "Intake");
-
         odom = HWM.get(SensorSparkFunOTOS.class, "sensor_otos");
 
 
