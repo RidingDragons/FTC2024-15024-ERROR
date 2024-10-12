@@ -13,6 +13,7 @@ public class Clark15024TeleOp2024 extends LinearOpMode {
     //Initialized Hardware map instance variable assigned to "robot"
     Clark15024HWMap robot = new Clark15024HWMap();
 
+
     //@Override - Used to rewrite the runOpMode function which is in the LinearOpMode class
     //runOpMode - runs when the button before the start button is pressed
     @Override
@@ -39,13 +40,46 @@ public class Clark15024TeleOp2024 extends LinearOpMode {
         robot.linearMotionRight1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.intakeHD.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.intakeHD.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        robot.odom.init();
+
+
 
         //TODO Add SparkFun Sensor and additional ability
         //Waits for the button to start on the driver hub to be pressed
         waitForStart();
+        robot.odom.init_loop();
 
         //while loop starts once the start button is pressed
         while(opModeIsActive()){
+            robot.odom.start();
+            telemetry.addData("SF OTOS", robot.odom.telemetry);
+            telemetry.update();
+            //Slow mode whenever you need to go slower to get precise blocks
+            //TODO change controller input if needed
+            double slow = gamepad1.right_bumper ? 0.5 : 1.0;
+            //Instances variables assigned to double or decimal values to the different gamepad
+            //Set the vertical as a negative because of the different values needed for the right side as they are in reverse
+            //TODO change negative signs of all variables if robot not moving or working as the values for the robot could need to be switched
+            double vertical = -gamepad1.left_stick_y;
+            double horizontal = gamepad1.left_stick_x * 1.1; //  Multiply by 1.1 to negate imperfect strafing
+            double pivot = gamepad1.right_stick_x;
+
+            //Obtains values for each motor through the positions through values
+            //from  left joystick which has up/down(vertical) and left/right values(horizontal), and right joystick which has left/right values(pivot)
+            double denominator = Math.max(Math.abs(vertical) + Math.abs(horizontal) + Math.abs(pivot), 1);
+            double rightFrontPower = (vertical - horizontal - pivot) / denominator;
+            double rightBackPower = (vertical + horizontal - pivot) / denominator;
+            double LeftFrontPower = (pivot + vertical + horizontal) / denominator;
+            double LeftBackPower = (vertical - horizontal + pivot) / denominator;
+
+            //Sets Power to the motors and changed the signed of the math in order to proportion the wheels right to move
+            robot.driveRightFront.setPower(rightFrontPower * slow);
+            robot.driveRightBack.setPower(rightBackPower * slow);
+            robot.driveLeftBack.setPower(LeftBackPower * slow);
+            robot.driveLeftFront.setPower(LeftFrontPower * slow);
+
+
+
 
         }
     }

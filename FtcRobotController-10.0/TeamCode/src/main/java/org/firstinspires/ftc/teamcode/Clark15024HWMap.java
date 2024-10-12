@@ -23,6 +23,7 @@ public class Clark15024HWMap {
     public DcMotor intakeHD = null;
     public SensorSparkFunOTOS odom = null;
 
+
     HardwareMap hM = null;
     //Map function which we can use to assign values to the instance variables
     //HWM - HardwareMap parameter which we can use to pull values from which are mostly used to assign to values
@@ -40,6 +41,8 @@ public class Clark15024HWMap {
         linearMotionRight1 = HWM.get(DcMotor.class, "linearMotionRight1");
         intakeHD = HWM.get(DcMotor.class, "Intake");
         odom = HWM.get(SensorSparkFunOTOS.class, "sensor_otos");
+
+
 
 
         //Using functions from the DcMotor class, this changes the direction of the motor, sets the power to 0, and makes the runmode to run without encoder as the robot is not moving
@@ -80,6 +83,7 @@ public class Clark15024HWMap {
         intakeHD.setDirection(DcMotorSimple.Direction.FORWARD);
         intakeHD.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         intakeHD.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
 
 
     }
