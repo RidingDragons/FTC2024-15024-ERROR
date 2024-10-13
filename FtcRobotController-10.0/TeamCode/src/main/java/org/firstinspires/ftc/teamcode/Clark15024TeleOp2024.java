@@ -40,20 +40,28 @@ public class Clark15024TeleOp2024 extends LinearOpMode {
         robot.linearMotionRight1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.intakeHD.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.intakeHD.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        robot.odom.init();
+        //Goes into the Sparkfun OTOS and runs the init function from the teleOP
+        //robot.odom.init();
 
 
 
         //TODO Add SparkFun Sensor and additional ability
         //Waits for the button to start on the driver hub to be pressed
         waitForStart();
-        robot.odom.init_loop();
+        //TODO Check is this needs to go into while loop instead of .start
+        //robot.odom.init_loop();
 
         //while loop starts once the start button is pressed
         while(opModeIsActive()){
+            /*
+            //TODO Figure out if you need to use the class as a whole for the odometry or make a variable
+            //Starts the OTOS while loop and adds the values to the control hub using telemetry
             robot.odom.start();
             telemetry.addData("SF OTOS", robot.odom.telemetry);
             telemetry.update();
+            //Figured out that you do not need to add the Sparkfun Variable while running
+             */
+
             //Slow mode whenever you need to go slower to get precise blocks
             //TODO change controller input if needed
             double slow = gamepad1.right_bumper ? 0.5 : 1.0;

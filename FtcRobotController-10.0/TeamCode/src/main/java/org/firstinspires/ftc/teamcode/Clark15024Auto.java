@@ -14,7 +14,7 @@ public class Clark15024Auto extends LinearOpMode {
     @Override
     public void runOpMode(){
         telemetry.addData("Time", time.time());
-        telemetry.addData("Postition", robot.odom.telemetry);
+        moveForward(10, 100);
     }
 
     public void moveForward(double p, int t){
