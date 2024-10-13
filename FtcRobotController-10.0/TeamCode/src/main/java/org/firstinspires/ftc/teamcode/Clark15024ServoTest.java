@@ -2,8 +2,9 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-
-@TeleOp(name = "ServoTester", group = "Video")
+//TeleOp class to test a servo for it's capabilities
+//This class is mainly formed to be produced for a video
+@TeleOp(name = "ServoTester", group = "Tests")
 public class Clark15024ServoTest extends LinearOpMode {
     Clark15024HWMap robot = new Clark15024HWMap();
 
