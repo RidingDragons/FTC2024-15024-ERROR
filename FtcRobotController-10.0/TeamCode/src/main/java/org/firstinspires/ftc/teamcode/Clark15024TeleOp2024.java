@@ -4,7 +4,7 @@ import com.qualcomm.hardware.sparkfun.SparkFunOTOS;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import org.firstinspires.ftc.robotcontroller.external.samples.SensorSparkFunOTOS;
+
 
 //Used to name this specific TeleOP to show in the driver hub
 @TeleOp(name = "Clark15024TeleOp2024")
