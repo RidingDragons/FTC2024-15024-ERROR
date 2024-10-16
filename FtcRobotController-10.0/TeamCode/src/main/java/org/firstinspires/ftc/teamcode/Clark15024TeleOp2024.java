@@ -13,6 +13,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class Clark15024TeleOp2024 extends LinearOpMode {
     //Initialized Hardware map instance variable assigned to "robot"
     Clark15024HWMap robot = new Clark15024HWMap();
+    //TODO Also try to use the CLark15024SensorSparkFunOTOS and see if it produces the same results and if so use the 15024 class
     SparkFunOTOS.Pose2D pos = new SparkFunOTOS.Pose2D();
 
     //@Override - Used to rewrite the runOpMode function which is in the LinearOpMode class
