@@ -6,6 +6,8 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 //This class is mainly formed to be produced for a video
 @TeleOp(name = "ServoTester", group = "Tests")
 public class Clark15024ServoTest extends LinearOpMode {
+    //TODO change this into only the servo variable instead of all of the hardware map and also change
+    //TODO it for .Map function in the runOPMode to intializing the variable
     Clark15024HWMap robot = new Clark15024HWMap();
 
 
