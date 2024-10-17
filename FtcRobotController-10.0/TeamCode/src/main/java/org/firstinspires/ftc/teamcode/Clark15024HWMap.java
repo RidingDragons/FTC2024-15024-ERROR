@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 //Imports
+import com.qualcomm.hardware.sparkfun.SparkFunOTOS;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -24,6 +25,8 @@ public class Clark15024HWMap {
     public DcMotor intakeHD = null;
     //public SensorSparkFunOTOS odom = null;
     public Servo temp = null;
+    public SparkFunOTOS odom = null;
+    public SparkFunOTOS.Pose2D pos = null;
 
 
     HardwareMap hM = null;
@@ -44,6 +47,7 @@ public class Clark15024HWMap {
         intakeHD = HWM.get(DcMotor.class, "Intake");
         //odom = HWM.get(SensorSparkFunOTOS.class, "sensor_otos");
         temp = HWM.get(Servo.class, "TrialServo");
+        odom = HWM.get(SparkFunOTOS.class, "sensor_otos");
 
 
 
@@ -86,6 +90,8 @@ public class Clark15024HWMap {
         intakeHD.setDirection(DcMotorSimple.Direction.FORWARD);
         intakeHD.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         intakeHD.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        pos = odom.getPosition();
 
 
 

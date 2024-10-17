@@ -13,8 +13,6 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class Clark15024TeleOp2024 extends LinearOpMode {
     //Initialized Hardware map instance variable assigned to "robot"
     Clark15024HWMap robot = new Clark15024HWMap();
-    //TODO Also try to use the CLark15024SensorSparkFunOTOS and see if it produces the same results and if so use the 15024 class
-    SparkFunOTOS.Pose2D pos = new SparkFunOTOS.Pose2D();
 
     //@Override - Used to rewrite the runOpMode function which is in the LinearOpMode class
     //runOpMode - runs when the button before the start button is pressed
@@ -51,22 +49,14 @@ public class Clark15024TeleOp2024 extends LinearOpMode {
         //TODO Add SparkFun Sensor and additional ability
         //Waits for the button to start on the driver hub to be pressed
         waitForStart();
-        //TODO Check is this needs to go into while loop instead of .start
-        //robot.odom.init_loop();
+
 
         //while loop starts once the start button is pressed
         while(opModeIsActive()){
-            /*
-            //TODO Figure out if you need to use the class as a whole for the odometry or make a variable
-            //Starts the OTOS while loop and adds the values to the control hub using telemetry
-            robot.odom.start();
-            telemetry.addData("SF OTOS", robot.odom.telemetry);
-            telemetry.update();
-            //Figured out that you do not need to add the Sparkfun Variable while running
-             */
-            telemetry.addData("Sensor X", pos.x);
-            telemetry.addData("Sensor Y", pos.y);
-            telemetry.addData("Sensor H", pos.h);
+            //Assigned Spark fun variable in the hardware map as a 2DPos and using that we get the x,y,h
+            telemetry.addData("Sensor X", robot.pos.x);
+            telemetry.addData("Sensor Y", robot.pos.y);
+            telemetry.addData("Sensor H", robot.pos.h);
             telemetry.update();
             //Slow mode whenever you need to go slower to get precise blocks
             //TODO change controller input if needed
