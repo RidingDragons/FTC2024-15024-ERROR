@@ -7,8 +7,6 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
 
-
-
 //Clark Robotics 15024 Hardware Map
 //Currently only have the motors from the robot powering the wheels
 //driveRightFront, driveRightBack, driveLeftFront, driveRightBack
@@ -41,13 +39,13 @@ public class Clark15024HWMap {
         driveRightFront = HWM.get(DcMotor.class, "driveRightFront");
         driveRightBack = HWM.get(DcMotor.class, "driveRightBack");
 
-        linearMotionUp1 = HWM.get(DcMotor.class, "linearMotionUp1");
+       /* linearMotionUp1 = HWM.get(DcMotor.class, "linearMotionUp1");
         linearMotionUp2 = HWM.get(DcMotor.class, "linearMotionUp2");
         linearMotionRight1 = HWM.get(DcMotor.class, "linearMotionRight1");
         intakeHD = HWM.get(DcMotor.class, "Intake");
         //odom = HWM.get(SensorSparkFunOTOS.class, "sensor_otos");
         temp = HWM.get(Servo.class, "TrialServo");
-        odom = HWM.get(SparkFunOTOS.class, "sensor_otos");
+        odom = HWM.get(SparkFunOTOS.class, "sensor_otos");*/
 
 
 
@@ -74,7 +72,7 @@ public class Clark15024HWMap {
         driveRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         driveRightFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        linearMotionUp1.setDirection(DcMotorSimple.Direction.FORWARD);
+        /*linearMotionUp1.setDirection(DcMotorSimple.Direction.FORWARD);
         linearMotionUp1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         linearMotionUp1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
@@ -91,7 +89,7 @@ public class Clark15024HWMap {
         intakeHD.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         intakeHD.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        pos = odom.getPosition();
+        pos = odom.getPosition();*/
 
 
 

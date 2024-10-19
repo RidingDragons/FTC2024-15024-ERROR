@@ -33,16 +33,15 @@ public class Clark15024TeleOp2024 extends LinearOpMode {
         robot.driveRightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.driveRightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.driveRightFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        robot.linearMotionUp1.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        /*robot.linearMotionUp1.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.linearMotionUp1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.linearMotionUp2.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.linearMotionUp2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.linearMotionRight1.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.linearMotionRight1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.intakeHD.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        robot.intakeHD.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        //Goes into the Sparkfun OTOS and runs the init function from the teleOP
-        //robot.odom.init();
+        robot.intakeHD.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);*/
+
 
 
 
@@ -54,17 +53,21 @@ public class Clark15024TeleOp2024 extends LinearOpMode {
         //while loop starts once the start button is pressed
         while(opModeIsActive()){
             //Assigned Spark fun variable in the hardware map as a 2DPos and using that we get the x,y,h
-            telemetry.addData("Sensor X", robot.pos.x);
+            /*telemetry.addData("Sensor X", robot.pos.x);
             telemetry.addData("Sensor Y", robot.pos.y);
-            telemetry.addData("Sensor H", robot.pos.h);
+            telemetry.addData("Sensor H", robot.pos.h);*/
             telemetry.update();
+
             //Slow mode whenever you need to go slower to get precise blocks
             //TODO change controller input if needed
             double slow = gamepad1.right_bumper ? 0.5 : 1.0;
+
+
+
             //Instances variables assigned to double or decimal values to the different gamepad
             //Set the vertical as a negative because of the different values needed for the right side as they are in reverse
             //TODO change negative signs of all variables if robot not moving or working as the values for the robot could need to be switched
-            double vertical = -gamepad1.left_stick_y;
+            double vertical = gamepad1.left_stick_y;
             double horizontal = gamepad1.left_stick_x * 1.1; //  Multiply by 1.1 to negate imperfect strafing
             double pivot = gamepad1.right_stick_x;
 
@@ -81,10 +84,6 @@ public class Clark15024TeleOp2024 extends LinearOpMode {
             robot.driveRightBack.setPower(rightBackPower * slow);
             robot.driveLeftBack.setPower(LeftBackPower * slow);
             robot.driveLeftFront.setPower(LeftFrontPower * slow);
-
-
-
-
         }
     }
 }
