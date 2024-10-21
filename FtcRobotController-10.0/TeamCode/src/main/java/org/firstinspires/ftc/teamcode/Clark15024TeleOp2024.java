@@ -4,6 +4,7 @@ import com.qualcomm.hardware.sparkfun.SparkFunOTOS;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 
 //Used to name this specific TeleOP to show in the driver hub
@@ -33,6 +34,7 @@ public class Clark15024TeleOp2024 extends LinearOpMode {
         robot.driveRightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.driveRightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.driveRightFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        robot.driveRightFront.setDirection(DcMotorSimple.Direction.REVERSE);
         /*robot.linearMotionUp1.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.linearMotionUp1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.linearMotionUp2.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
