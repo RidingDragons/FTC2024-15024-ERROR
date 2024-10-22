@@ -34,7 +34,7 @@ public class Clark15024TeleOp2024 extends LinearOpMode {
         robot.driveRightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.driveRightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.driveRightFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        robot.driveRightFront.setDirection(DcMotorSimple.Direction.REVERSE);
+
         /*robot.linearMotionUp1.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.linearMotionUp1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.linearMotionUp2.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);

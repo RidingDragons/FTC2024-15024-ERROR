@@ -68,7 +68,7 @@ public class Clark15024HWMap {
         driveRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         driveRightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        driveRightFront.setDirection(DcMotorSimple.Direction.REVERSE);
+        driveRightFront.setDirection(DcMotorSimple.Direction.FORWARD);
         driveRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         driveRightFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
